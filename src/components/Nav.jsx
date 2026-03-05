@@ -2,13 +2,13 @@ import { useState, useEffect } from "react";
 
 const NAV_ITEMS = [
   { label: "BoibyBook", href: "#" },
-  { label: "bPhone", href: "#" },
-  { label: "bPad", href: "#" },
-  { label: "Watch", href: "#" },
-  { label: "Buds", href: "#" },
-  { label: "Services", href: "#" },
+  { label: "bPhone",    href: "#" },
+  { label: "bPad",      href: "#" },
+  { label: "Watch",     href: "#" },
+  { label: "Buds",      href: "#" },
+  { label: "Services",  href: "#" },
   { label: "Accessories", href: "#" },
-  { label: "Support", href: "#" },
+  { label: "Support",   href: "#" },
 ];
 
 const SearchIcon = () => (
@@ -29,7 +29,6 @@ export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeItem, setActiveItem] = useState(null);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
@@ -37,9 +36,10 @@ export default function Nav() {
 
   return (
     <>
-      {/* ── Main nav bar ── */}
+      {/* Nav bar — boiby-glass is your @utility: sticky, blur, border */}
       <nav className="boiby-glass">
-        <div className="boiby-container flex items-center justify-between h-[var(--nav-height)]">
+        {/* boiby-container is your @utility: max-w-[1100px] + px-6 */}
+        <div className="boiby-container flex items-center justify-between h-nav">
 
           {/* Logo */}
           <a
@@ -50,7 +50,7 @@ export default function Nav() {
             <img src="/boibylongdark.png" alt="Boiby" className="h-5 w-auto block" />
           </a>
 
-          {/* Desktop links — centred between logo and actions */}
+          {/* Desktop links */}
           <ul className="hidden md:flex items-center flex-1 justify-center list-none">
             {NAV_ITEMS.map((item) => (
               <li key={item.label}>
@@ -58,53 +58,52 @@ export default function Nav() {
                   href={item.href}
                   onClick={() => setActiveItem(item.label)}
                   className={[
-                    "block px-2.5 text-[12px] font-normal tracking-tight leading-[var(--nav-height)]",
-                    "transition-colors duration-150 relative group whitespace-nowrap",
+                    "block px-2.5 text-[12px] font-normal tracking-tight h-nav leading-nav",
+                    "transition-colors duration-150 relative group whitespace-nowrap flex items-center",
                     activeItem === item.label
-                      ? "text-[var(--ui-text)]"
-                      : "text-[var(--ui-text-secondary)] hover:text-[var(--ui-text)]",
+                      ? "text-boiby-black"
+                      : "text-ui-text-secondary hover:text-boiby-black",
                   ].join(" ")}
                 >
                   {item.label}
-                  {/* Subtle underline on hover */}
-                  <span className="absolute bottom-2.5 left-1/2 -translate-x-1/2 w-3 h-px bg-[var(--ui-text)] rounded-full scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-50 transition-all duration-200 origin-center" />
+                  <span className="absolute bottom-2.5 left-1/2 -translate-x-1/2 w-3 h-px bg-boiby-black rounded-full scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-40 transition-all duration-200 origin-center" />
                 </a>
               </li>
             ))}
           </ul>
 
-          {/* Right-side actions */}
+          {/* Actions */}
           <div className="flex items-center gap-1">
             <button
               aria-label="Search"
-              className="hidden md:flex items-center justify-center w-8 h-8 rounded-full text-[var(--ui-text-secondary)] hover:text-[var(--ui-text)] hover:bg-black/5 transition-all duration-150"
+              className="hidden md:flex items-center justify-center w-8 h-8 rounded-full text-ui-text-secondary hover:text-boiby-black hover:bg-boiby-black/5 transition-all duration-150"
             >
               <SearchIcon />
             </button>
 
             <button
               aria-label="Shopping Bag"
-              className="hidden md:flex items-center justify-center w-8 h-8 rounded-full text-[var(--ui-text-secondary)] hover:text-[var(--ui-text)] hover:bg-black/5 transition-all duration-150"
+              className="hidden md:flex items-center justify-center w-8 h-8 rounded-full text-ui-text-secondary hover:text-boiby-black hover:bg-boiby-black/5 transition-all duration-150"
             >
               <BagIcon />
             </button>
 
-            {/* Hamburger — mobile only */}
+            {/* Hamburger */}
             <button
               aria-label={menuOpen ? "Close menu" : "Open menu"}
               onClick={() => setMenuOpen(!menuOpen)}
-              className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-[5px] rounded-full hover:bg-black/5 transition-colors duration-150"
+              className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-[5px] rounded-full hover:bg-boiby-black/5 transition-colors duration-150"
             >
               <span className={[
-                "block w-[18px] h-[1.5px] bg-[var(--ui-text)] rounded-full transition-all duration-200 origin-center",
+                "block w-[18px] h-[1.5px] bg-boiby-black rounded-full transition-all duration-200 origin-center",
                 menuOpen ? "translate-y-[6.5px] rotate-45" : "",
               ].join(" ")} />
               <span className={[
-                "block w-[18px] h-[1.5px] bg-[var(--ui-text)] rounded-full transition-all duration-200",
+                "block w-[18px] h-[1.5px] bg-boiby-black rounded-full transition-all duration-200",
                 menuOpen ? "opacity-0 scale-x-0" : "",
               ].join(" ")} />
               <span className={[
-                "block w-[18px] h-[1.5px] bg-[var(--ui-text)] rounded-full transition-all duration-200 origin-center",
+                "block w-[18px] h-[1.5px] bg-boiby-black rounded-full transition-all duration-200 origin-center",
                 menuOpen ? "-translate-y-[6.5px] -rotate-45" : "",
               ].join(" ")} />
             </button>
@@ -113,10 +112,10 @@ export default function Nav() {
         </div>
       </nav>
 
-      {/* ── Mobile menu overlay ── */}
+      {/* Mobile overlay */}
       <div
         className={[
-          "md:hidden fixed inset-0 top-[var(--nav-height)] z-[9998]",
+          "md:hidden fixed inset-0 top-nav z-40",
           "transition-all duration-300 ease-in-out",
           menuOpen
             ? "opacity-100 pointer-events-auto translate-y-0"
@@ -132,7 +131,7 @@ export default function Nav() {
           {NAV_ITEMS.map((item, i) => (
             <li
               key={item.label}
-              className="border-b border-black/[0.06] first:border-t"
+              className="border-b border-boiby-black/[0.06] first:border-t"
               style={{
                 opacity: menuOpen ? 1 : 0,
                 transform: menuOpen ? "translateY(0)" : "translateY(-4px)",
@@ -142,7 +141,7 @@ export default function Nav() {
               <a
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
-                className="block px-6 py-3.5 text-[17px] font-normal tracking-tight text-[var(--ui-text-secondary)] hover:text-[var(--ui-text)] transition-colors duration-150"
+                className="block px-6 py-3.5 text-[17px] font-normal tracking-tight text-ui-text-secondary hover:text-boiby-black transition-colors duration-150"
               >
                 {item.label}
               </a>
