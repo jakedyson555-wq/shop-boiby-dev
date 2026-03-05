@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* --- Boiby Core --- */
+  --boiby-purple: #7309e4;
+  --boiby-purple-hover: #5d07b8;
+  --boiby-purple-soft: rgba(115, 9, 228, 0.1);
+  --boiby-purple-glow: rgba(115, 9, 228, 0.3);
+
+  /* --- Boiby Neutrals --- */
+  --boiby-black: #0a0a0b;
+  --boiby-grey-100: #fbfbfd;
+  --boiby-grey-200: #f5f5f7;
+  --boiby-grey-300: #e8e8ed;
+  
+  /* --- UI Tokens --- */
+  --ui-bg: var(--boiby-grey-100);
+  --ui-text: var(--boiby-black);
+  --ui-text-secondary: #6e6e73;
+  --nav-height: 48px;
+}
+
+@layer base {
+  body {
+    @apply bg-[var(--ui-bg)] text-[var(--ui-text)] overflow-x-hidden;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  .boiby-glass {
+    @apply sticky top-0 z-[9999] w-full border-b border-black/5;
+    background: rgba(251, 251, 253, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .btn-boiby {
+    @apply px-6 py-2.5 rounded-full bg-[var(--boiby-purple)] text-white 
+           text-sm font-semibold transition-all hover:bg-[var(--boiby-purple-hover)] 
+           active:scale-95 shadow-lg shadow-[var(--boiby-purple-glow)];
+  }
+
+  .boiby-container {
+    @apply max-w-[1100px] mx-auto px-6;
+  }
+}
