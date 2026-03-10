@@ -71,7 +71,7 @@ export default defineConfig({
         compact: true,
         entryFileNames: '[hash].js',
         chunkFileNames: '[hash].js',
-        assetFileNames: '[hash].[ext]',
+        assetFileNames: '[name].[ext]',
       },
     },
   },
