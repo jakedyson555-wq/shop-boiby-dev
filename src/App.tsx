@@ -2,16 +2,16 @@ import React, { useState, useRef, useEffect } from "react";
 
 // TODO: finish/see summary button
 
-@theme {
-  --color-brand:   #7c3aed;
-  --color-p-ring:  rgba(124, 58, 237, 0.18);
-  --color-border:  #d2d2d7;
-  --color-surface: #f5f5f7;
-  --color-t1:      #1d1d1f;
-  --color-t2:      #6e6e73;
-  --color-orange:  #bf4800;
-  --color-teal:    #0071e3;
-}
+// ── Palette ──────────────────────────────────────────────────────────────────
+const P      = "#7c3aed";
+const P_RING = "rgba(124,58,237,0.18)";
+const BORDER = "#d2d2d7";
+const GRAY   = "#f5f5f7";
+const T1     = "#1d1d1f";
+const T2     = "#6e6e73";
+const ORANGE = "#bf4800";
+const TEAL   = "#0071e3";
+const NAV_H  = 0; // 48
 
 const fmt    = (n) => `A$${n.toLocaleString("en-AU", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 const fmtInt = (n) => `A$${n.toLocaleString("en-AU", { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`;
