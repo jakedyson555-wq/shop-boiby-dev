@@ -5,6 +5,10 @@ import { fmt, fmtInt, getAdapterLabel }  from "../../utils/formatters";
 import type { SpecGroup } from "../../components/SummarySpecCard";
 import { CHIPS, CHIP_BY_ID, COLORS, MEM, STOR } from "./data";
 
+import imgSilver from "../../assets/bbp-silver.png";
+import imgBlack  from "../../assets/bbp-black.png";
+import imgAll    from "../../assets/bbp-all.png";
+
 import { Modal }        from "../../components/Modal";
 import { ScrollHeader } from "../../components/ScrollHeader";
 import { Hero }         from "../../components/Hero";
@@ -221,9 +225,9 @@ export default function BoibyBookConfigurator() {
   ] : [];
 
   const heroImage =
-    color?.id === "silver" ? "src/assets/bbp-silver.png"
-    : color?.id === "black" ? "src/assets/bbp-black.png"
-    : "src/assets/bbp-all.png";
+    color?.id === "silver" ? imgSilver
+    : color?.id === "black" ? imgBlack
+    : imgAll;
 
   // ── Render ────────────────────────────────────────────────────────────────────
   return (
