@@ -2,6 +2,7 @@ import { defineConfig, transformWithEsbuild, Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { resolve, extname } from 'path';
+import ShopBoibyBook from 'src/ShopBoibyBook';
 
 function nodeModulesJsx(): Plugin {
   return {
@@ -66,6 +67,9 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
+        BoibyBookPro: resolve(__dirname, 'boibybook-pro.html'),
+        BoibyBookAir: resolve(__dirname, 'boibybook-air.html'),
+        ShopBoibyBook: resolve(__dirname, 'shop-boibybook.html'),
       },
       output: {
         compact: true,

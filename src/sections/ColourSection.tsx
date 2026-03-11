@@ -25,7 +25,7 @@ export function ColourSection({
     <Section refProp={refProp} locked={locked} isMobile={isMobile}>
       <SecTitle bold={title} light={subtitle} />
 
-      <p className="text-base font-medium text-t1 mb-4 tracking-[-0.005em]">
+      <p className="text-base font-semibold text-t1 mb-4 tracking-[-0.005em]">
         {selected ? `Colour — ${selected.name}` : "Select a colour"}
       </p>
 
@@ -38,9 +38,8 @@ export function ColourSection({
             className="w-[30px] h-[30px] rounded-full p-0 cursor-pointer transition-[border-color,outline-color] duration-350"
             style={{
               background:    c.hex,
-              border:        `2.5px solid ${selected === c ? "#7c3aed" : "transparent"}`,
-              outline:       `1.5px solid ${selected === c ? "transparent" : "#d2d2d7"}`,
-              outlineOffset: "2px",
+              border:        `1.5px solid ${selected === c ? "#7c3aed" : "transparent"}`,
+              outline:       `1px solid ${selected === c ? "transparent" : "#d2d2d7"}`,
             }}
           />
         ))}

@@ -1,9 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import ShopBoibyBook from './ShopBoibyBook_page'
 import BoibyBookConfigurator from './pages/BoibyBook-Pro/BoibyBookConfigurator'
-import BoibyBookAirConfigurator from './pages/BoibyBook-Air/BoibyBookAirConfigurator'
 import './global.css'
 
 class ErrorBoundary extends React.Component<{children: React.ReactNode}, {error: any}> {
@@ -17,13 +14,6 @@ class ErrorBoundary extends React.Component<{children: React.ReactNode}, {error:
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <ErrorBoundary>
-    <BrowserRouter>
-      <Routes>
-        <Route index element={<ShopBoibyBook />} />
-        <Route path="/boibybook-pro" element={<BoibyBookConfigurator />} />
-        <Route path="/boibybook-air" element={<BoibyBookAirConfigurator />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
-    </BrowserRouter>
+    <BoibyBookConfigurator />
   </ErrorBoundary>
 )

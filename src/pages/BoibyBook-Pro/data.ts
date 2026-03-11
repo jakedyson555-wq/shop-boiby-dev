@@ -18,10 +18,10 @@ export const CHIPS: ChipOption[] = [
   {
     id: "b6", name: "B6 chip", badge: "New",
     desc: "Exceptional performance for everyday professional and creative tasks.",
-    spec: "12-core CPU, 18-core GPU",
+    spec: "12-core CPU, 12-core GPU",
     basePrice: 0, isAuto: true,
     variants: [
-      { id: "b6v0", label1: "16-core CPU,", label2: "19-core GPU", sub: "18-core NPU", price: 0 },
+      { id: "b6v0", label1: "12-core CPU,", label2: "12-core GPU", sub: "18-core NPU", price: 0 },
     ],
   },
   {
