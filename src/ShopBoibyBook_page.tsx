@@ -74,9 +74,8 @@ function ProductCard({
             className="w-[10px] h-[10px] rounded-full p-0 cursor-pointer transition-[border-color,outline-color] duration-200"
             style={{
               background:    c.hex,
-              border:        `2px solid ${activeColor === c.id ? "#7c3aed" : "transparent"}`,
-              outline:       `1.5px solid ${activeColor === c.id ? "transparent" : "#c7c7cc"}`,
-              outlineOffset: "2px",
+              border:        `1px solid ${activeColor === c.id ? "#7c3aed" : "transparent"}`,
+              outline:       `1px solid ${activeColor === c.id ? "transparent" : "#c7c7cc"}`,
             }}
           />
         ))}
@@ -143,28 +142,23 @@ export default function ShopBoibyBook() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
               {
-                tag:   "COMPARE ALL MODELS",
+                tag:   "Compare all models",
                 title: "Which BoibyBook is right for you?",
               },
               {
-                tag:   "WHY BOIBYBOOK",
-                title: "The most personal computers we've ever made.",
-              },
-              {
-                tag:   "BOIBY INTELLIGENCE",
-                title: "Create, communicate and get things done effortlessly.",
-                accent: true,
-              },
+                tag:   "Why BoibyBook?",
+                title: "We haven't come up with a tagline yet, sorry.",
+              }
             ].map((card, i) => (
               <div
                 key={i}
                 className="bg-white rounded-[18px] p-6 flex flex-col cursor-pointer hover:shadow-md transition-shadow duration-200"
                 style={{ minHeight: 180 }}
               >
-                <div className={`text-[11px] font-semibold tracking-[0.06em] uppercase mb-2 ${card.accent ? "text-[#7c3aed]" : "text-t2"}`}>
+                <div className={`text-[14px] font-semibold mb-2 ${card.accent ? "text-[#7c3aed]" : "text-t2"}`}>
                   {card.tag}
                 </div>
-                <div className={`text-[19px] font-bold tracking-[-0.015em] leading-[1.25] ${card.accent ? "text-[#7c3aed]" : "text-t1"}`}>
+                <div className={`text-[22px] font-bold tracking-[-0.015em] leading-[1.25] ${card.accent ? "text-[#7c3aed]" : "text-t1"}`}>
                   {card.title}
                 </div>
               </div>
