@@ -31,7 +31,7 @@ export function Modal({ data, onClose, onAccept }: ModalProps) {
 
         {/* Change table */}
         <div className="config-card mb-6">
-          <div className="grid grid-cols-[180px_1fr_1fr] items-center">
+          <div className="grid grid-cols-[300px_1fr_1fr] items-center">
             <div className="text-[14px] text-t2 font-semibold">Current</div>
             <div className="text-[14px] text-t2 font-semibold">After change</div>
           </div>
@@ -39,7 +39,7 @@ export function Modal({ data, onClose, onAccept }: ModalProps) {
             <div
               key={i}
               className={[
-                "grid grid-cols-[180px_1fr_1fr] items-center",
+                "grid grid-cols-[300px_1fr_1fr] items-center",
                 i > 0 ? "pt-[12px]" : "",
               ].join(" ")}
             >
